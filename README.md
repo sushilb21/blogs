@@ -1,1 +1,1 @@
-# sushil-blogging
+# blogs
