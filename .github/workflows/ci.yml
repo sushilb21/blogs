@@ -10,27 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: |
           pip install mkdocs mkdocs-material
 
-      - name: 🏗️ Build MkDocs site
+      - name: Build MkDocs site
         run: |
           mkdocs build
 
-      - name: ⚙️ Setup GitHub Pages
-        uses: actions/configure-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
-      - name: 📤 Upload artifact
-        uses: actions/upload-pages-artifact@v1        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./site
 
@@ -48,6 +48,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
