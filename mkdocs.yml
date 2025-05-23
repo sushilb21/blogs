@@ -56,8 +56,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 hooks:
-    - hooks\socialmedia.py
-
+  - "hooks/socialmedia.py"
 
 nav:
     - Home: index.md
